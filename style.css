@@ -1,0 +1,377 @@
+
+    /* HEADER */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background: rgba(255,255,255,0.25);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      backdrop-filter: blur(6px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      border-radius: 100px;
+      
+    }
+
+    .logo img {
+      width: 110px;
+      height: auto;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .socials a {
+      color: #004f6b;
+      font-size: 1.6rem;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 8px rgba(0, 157, 255, 0.6));
+    }
+          :root {
+    --img-w: 200px;
+    --gap: 20px;
+    --duration: 0.8s;
+  }
+
+  .container {
+    position: relative;
+    width: calc(var(--img-w) * 2 + var(--gap));
+    height: calc(var(--img-w) * 10 / 9);
+    overflow: hidden;
+    border-radius: 18px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.6s ease, background 0.6s ease;
+  }
+
+  /* Awalnya latar belakang transparan */
+  .container {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Saat aktif latar belakang muncul */
+  .container.active {
+    background: linear-gradient(145deg, #f7f9fc, #dfe3ec);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transform: rotateY(8deg) translateZ(20px);
+  }
+
+  .image-box {
+    position: absolute;
+    left: 0;
+    width: var(--img-w);
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: left var(--duration) ease-in-out, transform 0.8s ease;
+    transform-origin: left center;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter var(--duration) ease;
+  }
+
+  .desc {
+    position: absolute;
+    left: 0;
+    width: var(--img-w);
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(-30px) rotateY(-15deg);
+    transition: all var(--duration) ease;
+    color: #222;
+  }
+
+  .desc h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+  }
+
+  .desc p {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.4;
+  }
+
+  .gif-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(0.7) rotateY(20deg);
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  .gif-popup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .blur-bg {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0px);
+    background: rgba(255,255,255,0);
+    opacity: 0;
+    transition: all var(--duration) ease;
+    z-index: 1;
+  }
+
+  /* Saat aktif (gambar geser & teks muncul) */
+  .container.active .image-box {
+    left: calc(var(--img-w) + var(--gap));
+    transform: rotateY(-15deg);
+  }
+
+  .container.active .desc {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+
+  /* Saat popup GIF muncul */
+  .container.show-gif .gif-popup {
+    width: calc(var(--img-w) * 1.6);
+    height: calc(var(--img-w) * 0.9);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  }
+
+  .container.show-gif .blur-bg {
+    opacity: 1;
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.3);
+  }
+
+  .container.show-gif .image-box img {
+    filter: blur(4px) brightness(0.9);
+  }
+
+  /* Hilangin kotak biru pas klik */
+  *:focus {
+    outline: none !important;
+  }
+
+  .say{
+    margin-top: 20px;
+  }
+  .cc{
+    padding-top: 150px;
+  }
+  .pd{
+    width: 100;
+  }
+.p{
+  text-align: center;
+  
+}
+
+
+   footer {
+      background: linear-gradient(to bottom right, #b8ecff, #6ed4f7, #2ba9c9);
+      color: #013a4a;
+      padding: 45px 25px;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 -3px 20px rgba(0,0,0,0.15);
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      margin-top: 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      color: #012d3b;
+      font-weight: 600;
+    }
+
+    .footer-section p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #044a5c;
+    }
+
+    .contact-info p {
+      margin: 6px 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .social-links a {
+      background: white;
+      color: #007d99;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .social-links a:hover {
+      background: #007d99;
+      color: white;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding-top: 15px;
+      color: #013a4a;
+    }
+
+    @media (min-width: 700px) {
+      .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    
+    
+        /* tombol pembuka (ombak) */
+    .nav-toggle {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: none;
+      background: #00bcd4;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0,188,212,0.6);
+      z-index: 100;
+    }
+
+    /* container navigasi (muncul di atas tombol ombak) */
+    .nav-bar {
+      position: fixed;
+      bottom: 95px; /* naik sedikit dari tombol ombak */
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.5s ease;
+      z-index: 99;
+    }
+
+    .nav-bar.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-10px);
+    }
+
+    /* item navigasi (lebih kecil, bubble style) */
+    .nav-item {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #baf6ff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-item:hover {
+      transform: translateY(-5px);
+      color: #00eaff;
+    }
+
+    /* aktif */
+    .nav-item.active {
+      background: #00d8ff;
+      color: #fff;
+      box-shadow: 0 0 20px #00eaff;
+    }
+
+    /* tooltip */
+    .nav-item span {
+      position: absolute;
+      right: 60px;
+      background: white;
+      color: #007f91;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 15px;
+      opacity: 0;
+      transition: 0.3s;
+      pointer-events: none;
+    }
+
+    .nav-item:hover span {
+      opacity: 1;
+      right: 70px;
+    }
+  
+  
+  body {
+  background: linear-gradient(to bottom, #5194c9, #ffffff);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ 
+ .h{
+   background-color: #68a0d7;
+ }
+
